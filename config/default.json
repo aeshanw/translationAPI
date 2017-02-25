@@ -1,0 +1,13 @@
+{
+  // Customer module configs
+  "Translation": {
+    "dbConfig": {
+      "host": "localhost",
+      "port": 5984,
+      "dbName": "translations"
+    },
+    "yandex": {
+      "apiKey": "trnsl.1.1.20170225T121313Z.0b9108c849a9b1b8.882602433b9624ec310f46eb53c2158e76adab61"
+    }
+  }
+}
