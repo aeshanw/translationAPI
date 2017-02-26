@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>Translator</h1>
-	<form method="post" action="">
+	<form id="translateForm" method="post" action="/translate">
 		<label for="from">FROM</label>
 		<select id="from">
 			<option value="fr">French</option>
@@ -26,9 +26,24 @@
 		<label for="text"></label>
 		<textarea id="text">
 		</textarea>
-		<button>Translate</button>
+		<button id="submitBtn">Translate</button>
 	</form>
+	<div id="result"></div>
 </body>
 <script type="text/javascript">
+$(function() {
+    console.log( "ready!" );
+    $('#submitBtn').click(function(evt){
+    	evt.preventDefault();
+    	var formdata = {};
+    	formdata.to = $('#to').val();
+    	formdata.from = $('#from').val();
+    	formdata.text = $('#text').val();
+    	$.post('/translate', formdata,function(data){
+    		console.log(data);
+    		$('#result').text(data.text);
+    	});
+    });
+});
 </script>
 </html>
