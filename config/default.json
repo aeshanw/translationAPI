@@ -1,5 +1,5 @@
 {
-  // Customer module configs
+  // Translation module configs
   "Translation": {
     "dbConfig": {
       "host": "localhost",

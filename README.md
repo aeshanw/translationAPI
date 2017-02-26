@@ -9,6 +9,10 @@ A translation API based off the Yandex API
 
 `npm install`
 
+###MongoDB
+This application relies on mongoDB. Please follow the guide below.
+https://docs.mongodb.com/manual/installation/
+
 ##Useage
 
 `npm start`
