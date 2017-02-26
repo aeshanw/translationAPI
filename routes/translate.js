@@ -46,9 +46,9 @@ var saveTranslation = function(db, translation, callback) {
 
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+// router.get('/', function(req, res, next) {
+//   res.send('respond with a resource');
+// });
 
 router.post('/', function(req, res, next) {
 
@@ -57,6 +57,8 @@ router.post('/', function(req, res, next) {
 		text: "Hello my name is Ilyess",
 		lang: 'en-fr'
 	};
+
+    // console.log('req: %j',req);
 
 	//override with params
     if(req && req.body){
@@ -91,7 +93,7 @@ router.post('/', function(req, res, next) {
              //call Yandex
               var queryStrings = querystring.stringify(params);
               request.post('https://translate.yandex.net/api/v1.5/tr.json/translate?'+queryStrings,function(err, response, body){
-                console.log('response: %j',response);
+                // console.log('response: %j',response);
                 var bodyText = JSON.parse(body);
                 if(response.statusCode > 200){
                     res.status(response.statusCode).send(body);
